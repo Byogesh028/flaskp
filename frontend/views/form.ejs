@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Flask Assignment 2 Form</title>
+</head>
+<body>
+  <h1>Form (Node + Express)</h1>
+  <form action="/submit" method="POST">
+    <label>Name:</label>
+    <input type="text" name="name" required /><br />
+
+    <label>Email:</label>
+    <input type="email" name="email" required /><br />
+
+    <label>Age:</label>
+    <input type="number" name="age" required /><br />
+
+    <label>Message:</label>
+    <textarea name="message" required></textarea><br />
+
+    <button type="submit">Submit</button>
+  </form>
+
+  <% if (typeof result !== "undefined") { %>
+    <h2>Backend Response</h2>
+    <pre><%= JSON.stringify(result, null, 2) %></pre>
+  <% } %>
+</body>
+</html>
