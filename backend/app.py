@@ -2,16 +2,18 @@ from flask import Flask, request, jsonify
 
 app = Flask(__name__)
 
+@app.route("/", methods=["GET"])
+def index():
+    return "Flask backend is running"
+
 @app.route("/process-form", methods=["POST"])
 def process_form():
-    data = request.get_json()  # expecting JSON from frontend
-    # or request.form if you post as form-encoded
+    data = request.get_json()
     name = data.get("name")
     email = data.get("email")
     age = data.get("age")
     message = data.get("message")
 
-    # Process the data as needed (store, validate, etc.)
     result = {
         "status": "success",
         "received": {
