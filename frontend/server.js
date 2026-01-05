@@ -32,13 +32,13 @@ app.post("/submit", async (req, res) => {
     // IMPORTANT: use service name "backend" (from docker-compose) not localhost
     // const response = await fetch("http://backend:5000/process-form", {
 
-    const response = await fetch("http://54.211.205.2:5000/process-form", {
+    const response = await fetch("http://172.31.46.165:5000/process-form", {
 
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(formData),
     });
-
+    console.log("Response status from Flask backend:", response);
     const result = await response.json();
     // For assignment, either show raw JSON or render a result page
     res.render("form", { result });
