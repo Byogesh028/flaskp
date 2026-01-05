@@ -32,7 +32,7 @@ app.post("/submit", async (req, res) => {
     // IMPORTANT: use service name "backend" (from docker-compose) not localhost
     // const response = await fetch("http://backend:5000/process-form", {
 
-    const response = await fetch("http://13.223.174.3:5000/process-form", {
+    const response = await fetch("http://54.211.205.2:5000/process-form", {
 
       method: "POST",
       headers: { "Content-Type": "application/json" },
